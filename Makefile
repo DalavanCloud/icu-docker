@@ -8,7 +8,7 @@ BINPATH=/src/bin/
 DISTROS=$(shell cd dockerfiles;ls)
 DISTROS_SMALL=ubuntu fedora
 SRC=src/icu
-REV:=$(shell svnversion $(SRC) | tr -d ' ')
+REV:=$(shell src/bin/icu-git-rev.sh $(SRC))
 all:	dirs src/icu
 
 #src/icu: src
